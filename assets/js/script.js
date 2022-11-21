@@ -1,4 +1,4 @@
-import { api_key } from "./config.js";
+import { api_key } from "./config.js"; //so I can keep secret api key in future. 
 var searchHistoryList = document.querySelector("#searchHistory");
 var searchBtn = document.querySelector("#searchBtn");
 var searchInput = document.querySelector("#search");
