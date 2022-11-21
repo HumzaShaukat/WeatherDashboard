@@ -1,0 +1,1 @@
+export var api_key = "&appid=40d4a71a57ae5668cdd6cf16888ed010"
