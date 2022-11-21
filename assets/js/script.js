@@ -8,7 +8,7 @@ var searchHistory = [];
 
 
 function getCountryCoordinates(search) {
-    var api_call = "http://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1" + api_key;
+    var api_call = "https://api.openweathermap.org/geo/1.0/direct?q=" + search + "&limit=1" + api_key;
     fetch (api_call)
     .then(function (response) {
         return response.json();
@@ -24,7 +24,7 @@ function getCountryCoordinates(search) {
 function getWeather(lat,long) {
   currentWeather.innerHTML = "";
   futureWeather.innerHTML = "";
-    var weather_API = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long + "&units=imperial" + api_key;
+    var weather_API = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + long + "&units=imperial" + api_key;
     fetch(weather_API)
     .then(function (response) {
         return response.json();
