@@ -75,10 +75,18 @@ function printSearchHistory(history) { //creates buttons for the search history.
     var searchBtn = $("<button class = 'historyBtn'>");
     searchBtn.text(history[i]);
     $("#searchHistory").append(searchBtn);
-  } 
+  }
+  localStorage.setItem("searchHistory", JSON.stringify(history)); 
 }
 
+
+
 $(function() {
+  // searchHistory = JSON.parse(localStorage.getItem('searchHistory') || '{}');
+  if (localStorage.getItem("searchHistory") != null) {
+    searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+    printSearchHistory(searchHistory);
+  }
   searchBtn.addEventListener("click", function(event) { //onclick of search button, the search is added to local history and the function to get coordinates and weather is called
     event.preventDefault();
     $("#futureWeather").attr("style", "display: flex");
@@ -87,7 +95,7 @@ $(function() {
     if (search.trim() == "") {
       return;
     }
-    if (JSON.parse(localStorage.getItem("searchHistory" !== null))) {
+    if (JSON.parse(localStorage.getItem("searchHistory"))!== null) {
       searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
       printSearchHistory(searchHistory);
     }
@@ -108,10 +116,12 @@ $(function() {
   });
   $("#searchHistory").click(function(event) { //if the search history button is clicked, that weather for that city will be retrieved 
     event.preventDefault();
+    $("#futureWeather").attr("style", "display: flex");
+    $("#currentWeather").attr("style", "display: flex");
     var historyEntry = event.target;
     if (historyEntry.matches("button") == true ) {
-      var search = historyEntry.textContent;
-      getCountryCoordinates(search);
+      var recentSearch = historyEntry.textContent;
+      getCountryCoordinates(recentSearch);
     }
   })
 })
