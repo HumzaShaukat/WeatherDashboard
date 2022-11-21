@@ -1,9 +1,9 @@
+import { api_key } from "./config.js";
 var searchHistoryList = document.querySelector("#searchHistory");
 var searchBtn = document.querySelector("#searchBtn");
 var searchInput = document.querySelector("#search");
 var currentWeather = document.querySelector("#currentWeather");
 var futureWeather = document.querySelector("#fiveDay");
-var api_key = "&appid=40d4a71a57ae5668cdd6cf16888ed010";
 var searchHistory = [];
 
 

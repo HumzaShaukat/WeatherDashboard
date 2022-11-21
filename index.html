@@ -18,11 +18,13 @@
         <button id = "searchBtn">Search</button>
         <ul id = "searchHistory"></ul>
     </form>
-    <div id = "currentWeather" style = "display: none"></div>
+    <div id = secondaryContainer>
+      <div id = "currentWeather" style = "display: none"></div>
+      <div id = "futureWeather" style = "display: none">
+          <h2>5-Day Forecast: </h2>
+          <div id = "fiveDay"></div>
+      </div>
     </div>
-    <div id = "futureWeather" style = "display: none">
-        <h2>5-Day Forecast: </h2>
-        <div id = "fiveDay"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script
@@ -30,7 +32,7 @@
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
     crossorigin="anonymous"
     ></script>
-    <script src = "assets/js/script.js"></script>
+    <script type = "module" src = "assets/js/script.js"></script>
   </body>
 
 
